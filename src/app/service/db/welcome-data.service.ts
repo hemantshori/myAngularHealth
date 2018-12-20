@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WelcomeDataService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
 
   //method to retrieve data from backend
 
   executeGetBackendData()
   {
-    console.log("ready to get service from backend")
+
+     return this.http.get('http://localhost:8080/test/all');
+
+
   }
 }

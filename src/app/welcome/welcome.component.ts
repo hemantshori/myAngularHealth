@@ -1,7 +1,7 @@
 
 import { WelcomeDataService } from './../service/db/welcome-data.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 
 
 
@@ -13,18 +13,17 @@ import { HttpClient } from '@angular/common/http';
 
 export class WelcomeComponent implements OnInit {
   constructor(private service: WelcomeDataService,
-              private http:HttpClient
+              
     ) { }
 
-name = 'hemant';
+
   ngOnInit() {
   }
 
 
   getWelcomeMessage(){
-    // console.log("hkjljkh");
-  
-    // this.service.executeGetBackendData();
-   console.log( this.http.get("http://localhost:8080/login"));
+    
+     console.log(this.service.executeGetBackendData());
+     this.service.executeGetBackendData().subscribe();
   }
 }

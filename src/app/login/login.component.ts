@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   // }
   validateLogin(){
 
-    if(this.UserName==='hemantshori' && this.Password==='password'){
+    if(this.UserName==='hemant' && this.Password==='hemant'){
       // redirect to welcome
        this.router.navigate(['welcome'])
       this.invalidLogin = false;
