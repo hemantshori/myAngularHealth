@@ -1,7 +1,7 @@
 
 import { WelcomeDataService } from './../service/db/welcome-data.service';
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 
 
@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class WelcomeComponent implements OnInit {
-  constructor(private service: WelcomeDataService,
+  constructor(private router: Router
               
     ) { }
 
@@ -20,10 +20,12 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  getWelcomeMessage(){
+  getWelcomeMessageByFirstName(){
     
-     console.log(this.service.executeGetBackendData());
-     this.service.executeGetBackendData().subscribe();
-  }
+ console.log('add a new patient')
+ this.router.navigate(['create-new-patient'])
+ 
+ }
+
+
 }

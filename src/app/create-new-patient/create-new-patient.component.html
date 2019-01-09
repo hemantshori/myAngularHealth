@@ -1,0 +1,39 @@
+<html>
+<body>
+
+<h2>Patient Details</h2>
+
+<form action="/action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" >
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" >
+  <br><br>
+ 
+  DOB:<br>
+  <input type="date" name="Date of Birth" >
+  <br><br>
+
+  Address:<br>
+  <input type="text" name="address" >
+  <br><br>
+  <button (click)="whenIHitSubmit()" class ="btn btn-success">Submit</button>
+
+  <div>
+   <button (click)= "selectByName()" class ="btn btn-success">Submit</button>
+
+  </div>
+</form> 
+<div class="container" *ngIf="responsefromServer">
+
+  <h2>
+    The response from server is 
+    </h2>
+    {{responsefromServer}}
+  
+</div>
+
+
+</body>
+</html>

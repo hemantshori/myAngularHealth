@@ -15,18 +15,20 @@ export class LoginComponent implements OnInit {
   }
   UserName = '';
   Password = '';
-  ErrorMessage = 'Invalid credentials';
+  ErrorMessage = 'Invalid credentials, Please provide correct credentials or call service desk @ 0422184033';
   invalidLogin = false;
 
   // handleLogin(){
   //   console.log(this.UserName + " and password is " +this.Password);
   // }
+  
   validateLogin(){
 
     if(this.UserName==='hemant' && this.Password==='hemant'){
+      this.invalidLogin = false;
       // redirect to welcome
        this.router.navigate(['welcome'])
-      this.invalidLogin = false;
+  
       console.log('theek chal rea hai beedu');
     }else{
       this.invalidLogin = true;

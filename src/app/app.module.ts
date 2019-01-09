@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
+import { CreateNewPatientComponent } from './create-new-patient/create-new-patient.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ErrorComponent } from './error/error.component';
     LoginComponent,
     WelcomeComponent,
     ErrorComponent,
+    CreateNewPatientComponent,
 
   ],
   imports: [
