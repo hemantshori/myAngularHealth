@@ -29,8 +29,8 @@ export class WelcomeDataService {
 
 
   }
-  getDataByFirstName()
+  getDataByFirstName(name)
   {
-    return this.http.get<someBean>('http://localhost:8080/test/ghoosa')
+    return this.http.get<someBean>(`http://localhost:8080/test/${name}`)
   }
 }

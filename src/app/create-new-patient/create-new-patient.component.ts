@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreateNewPatientComponent implements OnInit {
 
   responsefromServer: string;
+  errorMessage: string;
   
   constructor(private service:WelcomeDataService) { }
 
@@ -26,7 +27,8 @@ export class CreateNewPatientComponent implements OnInit {
     console.log('clicked submit successfully');
     console.log(this.service.executeGetBackendData());
    this.service.executeGetBackendData().subscribe(
-     response => this.handleResponsefromAPI(response)
+     response => this.handleResponsefromAPI(response), error => this.handleErrorResponse(error)
+     
      
    );
   
@@ -37,7 +39,8 @@ export class CreateNewPatientComponent implements OnInit {
 
   selectByName()
   {
-    this.service.getDataByFirstName().subscribe(response => this.handleResponsefromAPI(response));
+    var name = 'ghoosa';
+    this.service.getDataByFirstName(name).subscribe(response => this.handleResponsefromAPI(response));
   }
 
 
@@ -47,5 +50,14 @@ export class CreateNewPatientComponent implements OnInit {
     
     console.log(response);
   }
+
+
+  handleErrorResponse(error)
+  {
+   this.handleResponsefromAPI = error
+  }
+
+
+
 
 }
