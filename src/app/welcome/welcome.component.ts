@@ -1,7 +1,10 @@
+import { LoginComponent } from './../login/login.component';
 
 import { WelcomeDataService } from './../service/db/welcome-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { summaryForJitFileName } from '@angular/compiler/src/aot/util';
+import { HardCodedAuthenticationService } from './../service/hard-coded-authentication.service';
 
 
 
@@ -11,11 +14,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.css']
 })
 
+
 export class WelcomeComponent implements OnInit {
-  constructor(private router: Router
+
+
+ 
+  currentPatientsAssigned = [
+    {name : 'someName', age : 20},
+    {name : 'someName', age : 21},
+    {name : 'someName', age : 22},
+    {name : 'someName', age : 23},
+    {name : 'someName', age : 24},
+    {name : 'someName', age : 25},
+  
+
+]
+
+userLoggedIn = false;
+
+  constructor(private router: Router,private hcas: HardCodedAuthenticationService
               
     ) { }
 
+
+   
 
   ngOnInit() {
   }
@@ -26,6 +48,17 @@ export class WelcomeComponent implements OnInit {
  this.router.navigate(['create-new-patient'])
  
  }
+
+ checkIfUserIsALreadyLoggedin()
+ {
+   if(this.hcas.isUserLoggedIn())
+   this.userLoggedIn = false;
+   this.router.navigate(['login']);
+
+ }
+
+
+
 
 
 }

@@ -1,49 +1,76 @@
 <html>
+
 <body>
 
-<h2>Patient Details</h2>
+  <h2>Patient Details</h2>
 
-<form action="/action_page.php">
-  First name:<br>
-  <input type="text" name="firstname"  >
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" >
-  <br><br>
- 
-  DOB:<br>
-  <input type="date" name="Date of Birth" >
-  <br><br>
 
-  Address:<br>
-  <input type="text" name="address" >
-  <br><br>
-  <button (click)="whenIHitSubmit()" class ="btn btn-success">Submit</button>
+  <form action="/action_page.php">
+    First name:<br>
+    <input type="text" name="firstname">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname">
+    <br><br>
 
-  <div>
-   <button (click)= "selectByName()" class ="btn btn-success">Submit</button>
+    DOB:<br>
+    <input type="date" name="Date of Birth">
+    <br><br>
 
-  </div>
-</form> 
-<div class="container" *ngIf="responsefromServer">
+    Address:<br>
+    <input type="text" name="address">
+    <br><br>
+    <button (click)="whenIHitSubmit()" class="btn btn-success">Create JSON</button>
 
-  <h2>
-    The response from server is 
+    <div>
+      <button (click)="selectByName()" class="btn btn-success">Create Selective JSON</button>
+
+    </div>
+  </form>
+  <div class="container" *ngIf="responsefromServer">
+
+    <h2>
+      The response from server is
     </h2>
     {{responsefromServer | json}}
-  
-</div>
+
+
+  </div>
+
+  <table border="2">
+
+    <thead>
+      <tr>
+        <th> Id </th>
+        <th> Firstname </th>
+        <th> Lastname </th>
+        <th> Phone </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let responsefromServer of responsefromServer">
+        <td>{{responsefromServer.id}}</td>
+        <td>{{responsefromServer.firstName}}</td>
+        <td>{{responsefromServer.lastName}}</td>
+        <td>{{responsefromServer.phone}}</td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
 
 
 
-<div class="container" *ngIf="errorMessage">
+  <div class="container" *ngIf="errorMessage">
 
-  <h2>
-    There is error in response from API, please contact support!
+    <h2>
+      There is error in response from API, please contact support!
     </h2>
-    
-  
-</div>
+
+
+  </div>
 
 </body>
+
 </html>

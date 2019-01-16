@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 import { CreateNewPatientComponent } from './create-new-patient/create-new-patient.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { CreateNewPatientComponent } from './create-new-patient/create-new-patie
     WelcomeComponent,
     ErrorComponent,
     CreateNewPatientComponent,
+    MenuComponent,
+    FooterComponent,
 
   ],
   imports: [

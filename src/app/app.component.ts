@@ -1,4 +1,6 @@
+import { HardCodedAuthenticationService } from './service/hard-coded-authentication.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   message = 'myHealth';
  
+
+  constructor(private router: Router)
+              
+     { }
+
+
+    
+  logout()
+ {
+   this.router.navigate(['login'])
+ }
+
+
 }
+
+

@@ -1,14 +1,38 @@
+<div class='container'>
+  <!-- To Search for a Patient Please click <a routerLink = "/login">here</a> -->
+  To Search for a Patient
+  Please click <a routerLink="/todo">here</a>
+  
+</div>
+
+<div class='container'>
+  To Create a new Patient
+  <button (click)="getWelcomeMessageByFirstName()" class="btn btn-success">Create Patient</button>
+</div>
 
 
-  <div class='container'>
-    <!-- To Search for a Patient Please click <a routerLink = "/login">here</a> -->
-    To Search for a Patient 
-    Please click <a routerLink = "/todo">here</a> 
-  </div>
+<div>
+    <table border="2">
+        <caption>Patient List</caption>
+        <thead>
+          <tr>
+            <th>i</th>
+            <th>name</th>
+            <th>age</th>
+                </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let currentPatientsAssigned of currentPatientsAssigned; let i=index">
+              <td>{{i}}</td>
+          <td> {{currentPatientsAssigned.name}}</td>
+          <td>{{currentPatientsAssigned.age}}</td>
+                    </tbody>
+      
+      
+      </table>
+</div>
+
+<small *ngIf='checkIfUserIsALreadyLoggedin'>
+  <button>LogOut</button>
 
 
-  <div class='container'>
-   To Create a new Patient 
-    <button (click)="getWelcomeMessageByFirstName()" class="btn btn-success">Create Patient</button>
-  </div>
- 

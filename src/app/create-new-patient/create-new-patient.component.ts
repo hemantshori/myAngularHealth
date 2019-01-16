@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class CreateNewPatientComponent implements OnInit {
 
-  responsefromServer: string;
+  responsefromServer: any = [];
   errorMessage: string;
   
   constructor(private service:WelcomeDataService) { }
@@ -19,22 +19,19 @@ export class CreateNewPatientComponent implements OnInit {
   }
 
 
-  whenIHitSubmit()
+  whenIHitSubmit(): void
   {
 
     // this is where  we want to invoke the restful services
     // so create a service that will call the backend service(API) 
-    console.log('clicked submit successfully');
+
     console.log(this.service.executeGetBackendData());
    this.service.executeGetBackendData().subscribe(
-     response => this.handleResponsefromAPI(response), error => this.handleErrorResponse(error)
-     
-     
-   );
+    // response => this.handleResponsefromAPI(response), error => this.handleErrorResponse(error)
+    result => this.responsefromServer = result);
+    console.log(this.responsefromServer);
   
   }
-
- 
 
 
   selectByName()
@@ -48,6 +45,7 @@ export class CreateNewPatientComponent implements OnInit {
   {
     this.responsefromServer = response;
     
+    
     console.log(response);
   }
 
@@ -55,6 +53,8 @@ export class CreateNewPatientComponent implements OnInit {
   handleErrorResponse(error)
   {
    this.handleResponsefromAPI = error
+   console.log(error)
+
   }
 
 
