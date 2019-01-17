@@ -10,6 +10,7 @@ import { ErrorComponent } from './error/error.component';
 import { CreateNewPatientComponent } from './create-new-patient/create-new-patient.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     CreateNewPatientComponent,
     MenuComponent,
     FooterComponent,
+    SearchComponent,
 
   ],
   imports: [

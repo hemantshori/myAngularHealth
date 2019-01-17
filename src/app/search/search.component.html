@@ -1,0 +1,37 @@
+
+      <div>
+        Search By Patient Name : 
+        <br>
+        <input name="name" type="text" [(ngModel)]= "PatientNameToSearch"/> 
+<br>
+<br>
+        <button (click)= "selectByName()" class="btn btn-success">Search</button>
+      </div>
+
+
+      <br><br>
+      <button (click)="whenIHitSubmit()" class="btn btn-success">Search All</button>
+  
+      
+  <table border="2">
+
+    <thead>
+      <tr>
+        <th> Id </th>
+        <th> Firstname </th>
+        <th> Lastname </th>
+        <th> Phone </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let responsefromServer of responsefromServer">
+        <td>{{responsefromServer.id}}</td>
+        <td>{{responsefromServer.firstName}}</td>
+        <td>{{responsefromServer.lastName}}</td>
+        <td>{{responsefromServer.phone}}</td>
+
+
+      </tr>
+
+    </tbody>
+  </table>

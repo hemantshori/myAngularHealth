@@ -5,13 +5,19 @@
   
 </div>
 
+
+<div class='container'>
+  To search for a Patient
+  <button (click)="navigateToSearchPatientPage()" class="btn btn-success">Search Patient</button>
+</div>
+<br>
 <div class='container'>
   To Create a new Patient
-  <button (click)="getWelcomeMessageByFirstName()" class="btn btn-success">Create Patient</button>
+  <button (click)="navigateToCreatePatientPage()" class="btn btn-success">Create Patient</button>
 </div>
 
 
-<div>
+<!-- <div>
     <table border="2">
         <caption>Patient List</caption>
         <thead>
@@ -30,7 +36,7 @@
       
       
       </table>
-</div>
+</div> -->
 
 <small *ngIf='checkIfUserIsALreadyLoggedin'>
   <button>LogOut</button>

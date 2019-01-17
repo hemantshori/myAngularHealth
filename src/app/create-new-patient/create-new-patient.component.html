@@ -20,19 +20,16 @@
     Address:<br>
     <input type="text" name="address">
     <br><br>
-    <button (click)="whenIHitSubmit()" class="btn btn-success">Create JSON</button>
+    <button class="btn btn-success">Create Patient</button>
 
-    <div>
-      <button (click)="selectByName()" class="btn btn-success">Create Selective JSON</button>
-
-    </div>
+    
   </form>
   <div class="container" *ngIf="responsefromServer">
 
-    <h2>
+    <!-- <h5>
       The response from server is
-    </h2>
-    {{responsefromServer | json}}
+    </h5>
+    {{responsefromServer | json}} -->
 
 
   </div>

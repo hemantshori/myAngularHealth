@@ -42,7 +42,17 @@ userLoggedIn = false;
   ngOnInit() {
   }
 
-  getWelcomeMessageByFirstName(){
+
+  navigateToSearchPatientPage(){
+    
+    console.log('search for a patient')
+    this.router.navigate(['SearchComponent'])
+    
+    }
+
+
+
+  navigateToCreatePatientPage(){
     
  console.log('add a new patient')
  this.router.navigate(['create-new-patient'])

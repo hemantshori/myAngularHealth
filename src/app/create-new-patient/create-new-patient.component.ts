@@ -19,26 +19,26 @@ export class CreateNewPatientComponent implements OnInit {
   }
 
 
-  whenIHitSubmit(): void
-  {
+  // whenIHitSubmit(): void
+  // {
 
-    // this is where  we want to invoke the restful services
-    // so create a service that will call the backend service(API) 
+  //   // this is where  we want to invoke the restful services
+  //   // so create a service that will call the backend service(API) 
 
-    console.log(this.service.executeGetBackendData());
-   this.service.executeGetBackendData().subscribe(
-    // response => this.handleResponsefromAPI(response), error => this.handleErrorResponse(error)
-    result => this.responsefromServer = result);
-    console.log(this.responsefromServer);
+  //   console.log(this.service.executeGetBackendData());
+  //  this.service.executeGetBackendData().subscribe(
+  //   // response => this.handleResponsefromAPI(response), error => this.handleErrorResponse(error)
+  //   result => this.responsefromServer = result);
+  //   console.log(this.responsefromServer);
   
-  }
+  // }
 
 
-  selectByName()
-  {
-    var name = 'ghoosa';
-    this.service.getDataByFirstName(name).subscribe(response => this.handleResponsefromAPI(response));
-  }
+  // selectByName()
+  // {
+  //   var name = 'ghoosa';
+  //   this.service.getDataByFirstName(name).subscribe(response => this.handleResponsefromAPI(response));
+  // }
 
 
   handleResponsefromAPI(response)
