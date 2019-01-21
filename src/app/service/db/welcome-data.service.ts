@@ -48,4 +48,16 @@ export class WelcomeDataService {
     //return this.http.get<someBean>(`http://localhost:8080/test/${name}`)
     return this.http.get<CreateNewPatient>(`http://localhost:8080/test/${name}`)
   }
+
+  createANewPatient(id, firstName, lastName, phone)
+  {
+    console.log("fs "+firstName);
+       let patient = {id, firstName, lastName, phone}
+       patient.id = 100;
+       console.log(JSON.stringify(patient))
+       //var patient = {};
+        return this.http.post('http://localhost:8080/test/createPatent',patient)
+        console.log("*******" +patient.firstName)
+  }
+  
 }

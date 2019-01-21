@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

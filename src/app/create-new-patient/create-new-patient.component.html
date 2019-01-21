@@ -7,34 +7,34 @@
 
   <form action="/action_page.php">
     First name:<br>
-    <input type="text" name="firstname">
+    <input type="text" name="firstname" [(ngModel)]= "firstName"/>
     <br>
     Last name:<br>
-    <input type="text" name="lastname">
+    <input type="text" name="lastname" [(ngModel)]= "lastName"/>
     <br><br>
 
-    DOB:<br>
-    <input type="date" name="Date of Birth">
+    Id:<br>
+    <input type="string" name="Id" [(ngModel)]= "Id"/>
     <br><br>
 
-    Address:<br>
-    <input type="text" name="address">
+    Phone:<br>
+    <input type="text" name="phone" [(ngModel)]= "phone"/>
     <br><br>
-    <button class="btn btn-success">Create Patient</button>
+    <button (click)= "createNewPatient()" class="btn btn-success">Create Patient</button>
 
     
   </form>
   <div class="container" *ngIf="responsefromServer">
 
-    <!-- <h5>
+    <h5>
       The response from server is
     </h5>
-    {{responsefromServer | json}} -->
+    {{responsefromServer | json}}
 
 
   </div>
 
-  <table border="2">
+  <!-- <table border="2">
 
     <thead>
       <tr>
@@ -55,7 +55,7 @@
       </tr>
 
     </tbody>
-  </table>
+  </table> -->
 
 
 
